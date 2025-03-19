@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowy Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>به فروشگاه ما خوش آمدید</h1>
+        <nav>
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li><a href="#">محصولات</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">تماس با ما</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="products">
+            <div class="product-card">
+                <img src="discord.png" alt="اکانت دیسکورد">
+                <h2>اکانت دیسکورد</h2>
+                <p>لیست تاریخ دار</p>
+                <label for="year-select">سال ساخت اکانت:</label>
+                <select id="year-select" onchange="updateDiscordPrice()">
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                </select>
+                <p class="price">قیمت: <span id="discord-price">650,000</span> تومان</p>
+                <button onclick="addToCart('اکانت دیسکورد', true)">افزودن به سبد خرید</button>
+            </div>
+            <div class="product-card">
+                <img src="minecraft.png" alt="اکانت ماینکرافت">
+                <h2>اکانت ماینکرافت</h2>
+                <p>فول اکسس</p>
+                <p class="price">قیمت: 650,000 تومان</p>
+                <button onclick="addToCart('اکانت ماینکرافت')">افزودن به سبد خرید</button>
+            </div>
+            <div class="product-card">
+                <img src="d_nitro.png" alt="دیسکورد نیترو">
+                <h2>دیسکورد نیترو</h2>
+                <p>اشتراک 1 ماهه</p>
+                <p class="price">قیمت: 110,000 تومان</p>
+                <button onclick="addToCart('دیسکورد نیترو')">افزودن به سبد خرید</button>
+            </div>
+            <!-- محصولات بیشتر -->
+        </section>
+    </main>
+
+    <div class="cart-modal">
+        <div class="cart-content">
+            <h2>سبد خرید</h2>
+            <ul class="cart-items">
+                <!-- آیتم‌های سبد خرید اینجا نمایش داده می‌شوند -->
+            </ul>
+            <button class="checkout-btn" onclick="checkout()">تسویه حساب</button>
+            <button class="close-cart">&times;</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
